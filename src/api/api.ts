@@ -1,7 +1,7 @@
 import ky from "ky";
 
 export const api = ky.create({
-    prefixUrl: "http://localhost:7778",
+    prefixUrl: process.env.REACT_APP_API_URL || "http://localhost:8080",
     hooks: {
         beforeRequest: [
             request => {

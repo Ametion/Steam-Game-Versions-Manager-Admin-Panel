@@ -11,7 +11,7 @@ export const LoginPage = () => {
     const handleLogin = async () => {
         if ( login != "" && password != "") {
             try {
-                const response = await ky.post("http://localhost:7778/auth/login", {
+                const response = await ky.post(process.env.REACT_APP_API_URL + "/auth/login", {
                   json: {
                       login: login,
                       password: password

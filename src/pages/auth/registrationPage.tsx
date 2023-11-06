@@ -13,7 +13,7 @@ export const RegistrationPage = () => {
     const handleRegistration = async () => {
         if (login !== "" && password !== "" && (password === confirmPassword)) {
             try {
-                const response = await ky.post("http://localhost:7778/auth/register", {
+                const response = await ky.post(process.env.REACT_APP_API_URL + "/auth/register", {
                     json: {
                         login: login,
                         password: password
